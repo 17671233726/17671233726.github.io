@@ -10,6 +10,16 @@
 
 <body>
     <h1>hello world</h1>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', 'http://152.136.185.210:8000/api/w6/home/multidata');
+        xhr.onreadystatechange = function () {
+            if (xhr.status == 200 && xhr.readyState == 4) {
+                document.body.innerHTML = xhr.response;
+            }
+        }
+        xhr.send();
+    </script>
 </body>
 
 </html>
